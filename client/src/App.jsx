@@ -5,14 +5,12 @@ import { Report } from "./pages/Report";
 
 function App() {
     return (
-        <>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/report/:id" element={<Report />} />
-                </Routes>
-            </Router>
-        </>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/report/:id" element={<Report />} />
+            </Routes>
+        </Router>
     );
 }
 

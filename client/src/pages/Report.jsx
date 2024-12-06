@@ -14,6 +14,7 @@ export const Report = () => {
     });
 
     const handleFilterChange = (filter) => {
+        // Great way to get all the necessary values from input when not using FormData
         const { name, type, value, checked } = filter.target;
         setFilters({
             ...filters,

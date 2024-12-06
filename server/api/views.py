@@ -1,12 +1,11 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.request import Request
 from .serializers import DocumentSerializer, SiteSerializer
 from .queries import query_by_sitename, query_by_siteid
 
 class Documents(APIView):
     
-    def get(self, request: Request, format="json") -> Response:
+    def get(self, request, format="json"):
         serializer = DocumentSerializer(data=request.query_params)
         
         if not serializer.is_valid():
@@ -17,7 +16,7 @@ class Documents(APIView):
 
 class SiteDocuments(APIView):
 
-    def get(self, request: Request, siteId, format="json") -> Response:
+    def get(self, request, siteId, format="json"):
 
         serializer = SiteSerializer(data=request.query_params)
 
@@ -25,5 +24,3 @@ class SiteDocuments(APIView):
             return Response({"error": "Invalid parameters"}, status=404)
 
         return Response(query_by_siteid(siteId, serializer.data))
-
-    

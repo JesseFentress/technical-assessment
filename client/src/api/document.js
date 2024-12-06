@@ -10,6 +10,7 @@ export function searchDocuments(formData) {
     })
         .then((res) => {
             if (!res.ok) {
+                // We can reach the server but got a bad response
                 return {
                     error: "Server returned an unexpected response.",
                 };
@@ -20,6 +21,7 @@ export function searchDocuments(formData) {
             return { result: data };
         })
         .catch((err) => {
+            // Cannot reach the server
             return {
                 error: "There is trouble reaching the server. Please refresh the page and try again.",
             };
@@ -37,6 +39,7 @@ export async function getDocuments(siteId, filters) {
     })
         .then((res) => {
             if (!res.ok) {
+                // We can reach the server but got a bad response
                 return {
                     error: "Server returned an unexpected response.",
                 };
@@ -47,6 +50,7 @@ export async function getDocuments(siteId, filters) {
             return { result: data };
         })
         .catch((err) => {
+            // Cannot reach the server
             return {
                 error: "There is trouble reaching the server. Please refresh the page and try again.",
             };

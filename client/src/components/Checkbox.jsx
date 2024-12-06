@@ -10,7 +10,6 @@ export const Checkbox = ({
 
     const handleCheckedChange = (event) => {
         setIsChecked(event.target.checked);
-        // onChange(event);
         onChange(event);
     };
 

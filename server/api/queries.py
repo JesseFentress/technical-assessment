@@ -1,5 +1,3 @@
-from datetime import datetime
-
 def query_by_sitename(data):
     query = { "query": {} }
     query["query"]["term" if data.get('is_exact_match') else "match"] = {"siteName": data.get('site_name')}
