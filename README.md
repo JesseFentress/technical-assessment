@@ -1,4 +1,4 @@
-# CP Cyber Technical Assesment
+# Technical Assesment
 
 ## By: Jesse Fentress
 
